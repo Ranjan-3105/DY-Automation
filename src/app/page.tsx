@@ -14,11 +14,9 @@ import {
   VolumeX, 
   Maximize2, 
   Eye, 
-  Sparkles, 
   CheckCircle2, 
   ShieldCheck, 
   Zap, 
-  Sliders, 
   Film, 
   Grid,
   Send
@@ -29,7 +27,7 @@ import Lenis from "lenis";
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Logo Component
+// Brand Logo Component
 function BrandLogo({ className = "h-9 w-auto" }: { className?: string }) {
   return (
     <div className={`flex items-center gap-3 ${className}`}>
@@ -67,76 +65,76 @@ function BrandLogo({ className = "h-9 w-auto" }: { className?: string }) {
   );
 }
 
-// Media Assets Data
+// Media Assets Data (Clean web-safe filenames for reliable server deployment)
 const REAL_IMAGES = [
   {
-    src: "/assets/newImages/WhatsApp Image 2026-10-05 at 11.55.41 AM.jpeg",
+    src: "/assets/newImages/hero-smart-hub.jpeg",
     title: "Smart Home Automation Hub & Circuit Integration",
     category: "Smart Home",
     desc: "Precision low-voltage wiring and micro-controller integration for intelligent residential lighting and load management."
   },
   {
-    src: "/assets/newImages/WhatsApp Image 2026-10-05 at 11.55.40 AM.jpeg",
+    src: "/assets/newImages/smart-switch-panel.jpeg",
     title: "Smart Switch & Touch Panel Assembly",
     category: "Smart Home",
     desc: "Custom smart wall touch modules engineered for seamless home automation interface."
   },
   {
-    src: "/assets/newImages/WhatsApp Image 2026-10-05 at 11.55.40 AM (1).jpeg",
+    src: "/assets/newImages/smart-home-panel-1.jpeg",
     title: "Residential Lighting & Power Automation Panel",
     category: "Smart Home",
     desc: "Modular control enclosure providing touch & smartphone app control over living space lighting."
   },
   {
-    src: "/assets/newImages/WhatsApp Image 2026-10-05 at 11.55.41 AM (1).jpeg",
+    src: "/assets/newImages/electrical-distribution.jpeg",
     title: "Industrial Electrical Distribution Enclosure",
     category: "Electrical",
     desc: "Heavy-duty breaker box wiring with line protection devices and calibrated phase distribution."
   },
   {
-    src: "/assets/newImages/WhatsApp Image 2026-10-05 at 11.55.42 AM.jpeg",
+    src: "/assets/newImages/smart-relay-module.jpeg",
     title: "Smart Relay Module & Load Controller",
     category: "Smart Home",
     desc: "Multi-channel automation relay board for centralized home circuit switching."
   },
   {
-    src: "/assets/newImages/WhatsApp Image 2026-10-05 at 11.55.42 AM (1).jpeg",
+    src: "/assets/newImages/industrial-plc-panel.jpeg",
     title: "Industrial PLC Main Control Panel",
     category: "Industrial PLC",
     desc: "High-density PLC wiring cabinet for automated process lines and machinery."
   },
   {
-    src: "/assets/newImages/WhatsApp Image 2026-10-05 at 11.55.43 AM.jpeg",
+    src: "/assets/newImages/scada-control-enclosure.jpeg",
     title: "Automated Control Enclosure & Monitoring",
     category: "Industrial PLC",
     desc: "SCADA integrated control panel built with industrial safety standards and surge protection."
   },
   {
-    src: "/assets/newImages/WhatsApp Image 2026-10-05 at 11.55.43 AM (1).jpeg",
+    src: "/assets/newImages/on-site-installation.jpeg",
     title: "On-Site Installation & Field Wiring",
     category: "Commissioning",
     desc: "DY Automation engineers executing site wiring and terminal block connections."
   },
   {
-    src: "/assets/newImages/WhatsApp Image 2026-10-05 at 11.55.44 AM.jpeg",
+    src: "/assets/newImages/smart-panel-wiring.jpeg",
     title: "Custom Smart Panel Internal Layout",
     category: "Smart Home",
     desc: "Neat, color-coded internal wiring harness for long-term reliability and easy maintenance."
   },
   {
-    src: "/assets/newImages/WhatsApp Image 2026-10-05 at 11.55.44 AM (1).jpeg",
+    src: "/assets/newImages/power-board-testing.jpeg",
     title: "Power Distribution Board Testing",
     category: "Electrical",
     desc: "Handover quality inspection and circuit continuous load check in progress."
   },
   {
-    src: "/assets/newImages/WhatsApp Image 2026-10-05 at 11.55.44 AM (2).jpeg",
+    src: "/assets/newImages/compact-smart-module.jpeg",
     title: "Compact Smart Control Module",
     category: "Smart Home",
     desc: "Retrofit automation unit installed behind standard wall plates for smart home conversion."
   },
   {
-    src: "/assets/newImages/WhatsApp Image 2026-10-05 at 11.55.45 AM.jpeg",
+    src: "/assets/newImages/plant-handover.jpeg",
     title: "Complete Plant Control Panel Handover",
     category: "Commissioning",
     desc: "Fully commissioned control system running active plant machinery."
@@ -146,7 +144,7 @@ const REAL_IMAGES = [
 const WORK_VIDEOS = [
   {
     id: "vid-1",
-    src: "/assets/videos/WhatsApp Video 2026-10-05 at 7.32.48 PM.mp4",
+    src: "/assets/videos/smart-home-demo.mp4",
     title: "Smart Home Automation Touch Panel Demo",
     category: "Smart Home",
     subtitle: "Interactive lighting & scene control powered by DY Automation smart modules.",
@@ -154,7 +152,7 @@ const WORK_VIDEOS = [
   },
   {
     id: "vid-2",
-    src: "/assets/videos/WhatsApp Video 2026-10-05 at 7.32.50 PM.mp4",
+    src: "/assets/videos/plc-live-testing.mp4",
     title: "Industrial Control Panel Live Operational Test",
     category: "Industrial PLC",
     subtitle: "PLC relay sequence and automatic power switching live demonstration.",
@@ -162,7 +160,7 @@ const WORK_VIDEOS = [
   },
   {
     id: "vid-3",
-    src: "/assets/videos/WhatsApp Video 2026-10-05 at 7.33.07 PM.mp4",
+    src: "/assets/videos/site-commissioning.mp4",
     title: "On-Site Wiring & Panel Commissioning",
     category: "Commissioning",
     subtitle: "Hands-on installation work performed by our expert engineers at client site.",
@@ -486,13 +484,13 @@ export default function Home() {
             DY AUTOMATION — BHUBANESWAR, ODISHA
           </div>
           
-          {/* Main Headline (Requirement 3: Clear headliner saying every home will now be smart) */}
+          {/* Main Headline */}
           <h1 className="hero-heading font-display text-[38px] sm:text-[68px] md:text-[92px] lg:text-[120px] leading-[0.92] tracking-tight uppercase mb-6 sm:mb-8">
             <div className="line overflow-hidden"><span className="block text-white">EVERY HOME</span></div>
             <div className="line overflow-hidden"><span className="block text-blue font-extrabold drop-shadow-lg">WILL NOW BE SMART<span className="text-white">.</span></span></div>
             <div className="line overflow-hidden">
               <span className="block text-stroke-subtle text-xl sm:text-3xl md:text-5xl lg:text-6xl mt-2 tracking-normal">
-                AUTOMATION & ELECTRICAL ENGINEERING
+                AUTOMATION &amp; ELECTRICAL ENGINEERING
               </span>
             </div>
           </h1>
@@ -638,7 +636,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* WORK GALLERY SECTION (Requirement 2: Use videos & photos in our work gallery section) */}
+      {/* WORK GALLERY SECTION */}
       <section id="gallery" className="py-20 sm:py-28 md:py-32 bg-secondary border-t border-border-subtle relative">
         <div className="container mx-auto px-4 sm:px-6 md:px-[5vw]">
           
@@ -682,7 +680,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* VIDEO SHOWCASE CARDS (If showing videos) */}
+          {/* VIDEO SHOWCASE CARDS */}
           {showVideos && (
             <div className="mb-14">
               <div className="flex items-center gap-3 font-mono text-xs tracking-widest text-blue mb-6 uppercase">
@@ -774,7 +772,7 @@ export default function Home() {
             </div>
           )}
 
-          {/* REAL PHOTO GALLERY GRID (Requirement 1: Use images in newImages) */}
+          {/* REAL PHOTO GALLERY GRID */}
           {activeTab !== "VIDEOS" && (
             <div>
               <div className="flex items-center gap-3 font-mono text-xs tracking-widest text-blue mb-6 uppercase">
@@ -1073,7 +1071,7 @@ export default function Home() {
         </div>
       </footer>
 
-      {/* MOBILE STICKY BOTTOM QUICK ACTION BAR (Requirement 5: Mobile First responsiveness & instant leads) */}
+      {/* MOBILE STICKY BOTTOM QUICK ACTION BAR */}
       <div className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-primary/95 backdrop-blur-xl border-t border-border-subtle p-2.5 flex items-center gap-2 shadow-2xl">
         <a 
           href="tel:7735211087" 
@@ -1091,7 +1089,7 @@ export default function Home() {
         </a>
       </div>
 
-      {/* LIGHTBOX MEDIA MODAL (FOR FULLSCREEN VIDEO & PHOTO VIEWING) */}
+      {/* LIGHTBOX MEDIA MODAL */}
       {activeMedia && (
         <div 
           className="fixed inset-0 z-[120] bg-black/95 backdrop-blur-2xl flex flex-col items-center justify-center p-4 sm:p-8 transition-all"
