@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 100" fill="none">
+  <defs>
+    <linearGradient id="dyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#258ff3" />
+      <stop offset="100%" stop-color="#0052cc" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#93c5fd" />
+    </linearGradient>
+    <filter id="blueGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  
+  <!-- Icon Symbol -->
+  <g transform="translate(5, 5)">
+    <!-- Tech Outer Hexagon frame -->
+    <polygon points="45,5 82,26 82,69 45,90 8,69 8,26" fill="#080b13" stroke="url(#dyGrad)" stroke-width="3" filter="url(#blueGlow)"/>
+    <!-- Inner glowing grid lines -->
+    <path d="M 45,5 L 45,90 M 8,26 L 82,69 M 8,69 L 82,26" stroke="#258ff3" stroke-width="1" stroke-opacity="0.25"/>
+    
+    <!-- Stylized D and Y Icon -->
+    <!-- D Path -->
+    <path d="M 26,28 L 44,28 C 55,28 62,34 62,47 C 62,60 55,66 44,66 L 26,66 Z" fill="none" stroke="url(#accentGrad)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Y Electric Line -->
+    <path d="M 33,31 L 45,48 L 45,67 M 45,48 L 57,31" fill="none" stroke="url(#dyGrad)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- Smart Nodes -->
+    <circle cx="45" cy="5" r="3.5" fill="#38bdf8"/>
+    <circle cx="82" cy="26" r="3.5" fill="#258ff3"/>
+    <circle cx="82" cy="69" r="3.5" fill="#38bdf8"/>
+    <circle cx="8" cy="69" r="3.5" fill="#258ff3"/>
+  </g>
+  
+  <!-- Brand Text -->
+  <g transform="translate(102, 10)">
+    <text x="0" y="44" font-family="system-ui, -apple-system, sans-serif" font-size="36" font-weight="900" letter-spacing="2" fill="#ffffff">DY</text>
+    <text x="62" y="44" font-family="system-ui, -apple-system, sans-serif" font-size="36" font-weight="900" letter-spacing="3" fill="url(#dyGrad)">AUTOMATION</text>
+    <text x="2" y="68" font-family="monospace" font-size="10.5" font-weight="600" letter-spacing="4" fill="#94a3b8">SMART HOME &amp; INDUSTRIAL</text>
+  </g>
+</svg>
