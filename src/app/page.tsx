@@ -65,7 +65,7 @@ function BrandLogo({ className = "h-9 w-auto" }: { className?: string }) {
   );
 }
 
-// Media Assets Data (Clean web-safe filenames for reliable server deployment)
+// Media Assets Data (Unoptimized static paths for 100% reliable image loading)
 const REAL_IMAGES = [
   {
     src: "/assets/newImages/hero-smart-hub.jpeg",
@@ -468,6 +468,7 @@ export default function Home() {
             src={REAL_IMAGES[0].src}
             alt="Real Smart Home & Industrial Panel Installation" 
             fill 
+            unoptimized
             className="object-cover hero-image scale-105"
             priority
           />
@@ -562,6 +563,7 @@ export default function Home() {
             src={services[hoveredServiceIdx].image} 
             alt="Service preview" 
             fill 
+            unoptimized
             className="object-cover"
           />
         )}
@@ -600,6 +602,7 @@ export default function Home() {
                         src={service.image} 
                         alt={service.title} 
                         fill 
+                        unoptimized
                         className="object-cover transition-transform duration-700 group-hover:scale-105" 
                       />
                       <div className="absolute inset-0 bg-navy/40 group-hover:bg-navy/20 transition-colors"></div>
@@ -701,6 +704,7 @@ export default function Home() {
                         src={vid.src}
                         className="w-full h-full object-cover"
                         playsInline
+                        muted
                         loop
                         preload="metadata"
                       />
@@ -791,6 +795,7 @@ export default function Home() {
                       src={img.src} 
                       alt={img.title} 
                       fill 
+                      unoptimized
                       className="object-cover transition-transform duration-700 group-hover:scale-110" 
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent opacity-70 group-hover:opacity-90 transition-opacity"></div>
@@ -839,6 +844,7 @@ export default function Home() {
                   src={REAL_IMAGES[9].src} 
                   alt="DY Automation Engineer Testing Electrical Board" 
                   fill 
+                  unoptimized
                   className="object-cover" 
                 />
                 <div className="absolute inset-0 bg-blue/10 mix-blend-overlay"></div>
@@ -1122,6 +1128,7 @@ export default function Home() {
                   src={activeMedia.src} 
                   alt={activeMedia.title} 
                   fill 
+                  unoptimized
                   className="object-contain"
                 />
               </div>
